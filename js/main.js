@@ -29,9 +29,9 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Tombol "Tanya jasa ini" → pesan WA terisi
+  // Tombol "Tanya paket ini" → pesan WA terisi
   document.querySelectorAll('[data-wa]').forEach(function (a) {
-    a.href = waUrl('Halo Fajar, saya mau tanya soal jasa ' + a.dataset.wa + '.');
+    a.href = waUrl('Halo Zarnethub, saya mau tanya soal paket ' + a.dataset.wa + '.');
     a.target = '_blank';
     a.rel = 'noopener';
   });
@@ -55,7 +55,7 @@
     var ok = setError('nama', nama ? '' : 'Isi nama dulu ya.');
     ok = setError('butuh', butuh ? '' : 'Pilih kebutuhanmu.') && ok;
     if (!ok) { (nama ? form.butuh : form.nama).focus(); return; }
-    var text = 'Halo Fajar, saya ' + nama + '.\nKebutuhan: ' + butuh + (cerita ? '\nCerita singkat: ' + cerita : '');
+    var text = 'Halo Zarnethub, saya ' + nama + '.\nKebutuhan: ' + butuh + (cerita ? '\nCerita singkat: ' + cerita : '');
     var url = waUrl(text);
     waLink.href = url;
     done.hidden = false;
